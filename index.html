@@ -2,48 +2,114 @@
 <html>
 
 <head>
-  <title>My Website</title>
+  <title>My Profile</title>
   <style>
 
-    body {
-      background-color: #f4f4f4;
-      font-family: Arial, sans-serif;
+    * {
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
     }
 
+    body {
+      background-color: #f0f2f5;
+      font-family: Arial, sans-serif;
+    }
+
+    /* TOP NAVIGATION BAR */
+    nav {
+      background-color: #2c3e50;
+      padding: 15px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    nav .logo {
+      color: white;
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    nav a {
+      color: #cccccc;
+      text-decoration: none;
+      margin-left: 20px;
+      font-size: 15px;
+    }
+
+    nav a:hover {
+      color: white;
+    }
+
+    /* MAIN CARD */
     .container {
-      background-color: white;
-      width: 600px;
+      width: 650px;
       margin: 60px auto;
-      padding: 40px;
+      background-color: white;
       border-radius: 12px;
+      overflow: hidden;
     }
 
-    h1 {
+    /* TOP BANNER */
+    .banner {
+      background-color: #2c3e50;
+      height: 100px;
+    }
+
+    /* PROFILE CONTENT */
+    .profile {
+      padding: 20px 40px 40px;
+      text-align: center;
+    }
+
+    .profile h1 {
+      font-size: 26px;
       color: #222222;
+      margin-bottom: 6px;
     }
 
-    h2 {
-      color: #444444;
+    .profile .title {
+      color: #888888;
+      font-size: 16px;
+      margin-bottom: 16px;
     }
 
-    p {
-      color: #666666;
+    .profile p {
+      color: #555555;
       line-height: 1.8;
+      margin-bottom: 24px;
     }
 
-    a {
-      color: #3498db;
+    /* SKILLS TAGS */
+    .skills {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 28px;
     }
 
-    img {
-      border-radius: 8px;
+    .tag {
+      background-color: #eaf3fb;
+      color: #2980b9;
+      padding: 6px 16px;
+      border-radius: 20px;
+      font-size: 14px;
     }
 
-    ul {
-      color: #666666;
-      line-height: 2;
+    /* BUTTON */
+    .btn {
+      background-color: #2c3e50;
+      color: white;
+      padding: 12px 30px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-size: 15px;
+    }
+
+    .btn:hover {
+      background-color: #3d5166;
     }
 
   </style>
@@ -51,26 +117,39 @@
 
 <body>
 
+  <!-- NAVIGATION -->
+  <nav>
+    <span class="logo">MyWebsite</span>
+    <div>
+      <a href="#">Home</a>
+      <a href="#">About</a>
+      <a href="#">Contact</a>
+    </div>
+  </nav>
+
+  <!-- PROFILE CARD -->
   <div class="container">
 
-    <h1>This is Heading 1 (Biggest)</h1>
-    <h2>This is Heading 2</h2>
-    <h3>This is Heading 3 (Smaller)</h3>
+    <div class="banner"></div>
 
-    <p>This is a paragraph. I am learning HTML and this is my first website!</p>
+    <div class="profile">
+      <h1>Your Name Here</h1>
+      <p class="title">Web Developer in Training</p>
 
-    <p>This word is <b>bold</b> and this word is <i>italic</i>.</p>
+      <p>
+        Hi! I'm learning HTML and CSS and building my very first website.
+        I'm based in Abu Dhabi and passionate about technology.
+      </p>
 
-    <p>Visit <a href="https://www.google.com">Google</a></p>
+      <div class="skills">
+        <span class="tag">HTML</span>
+        <span class="tag">CSS</span>
+        <span class="tag">Learning</span>
+        <span class="tag">Abu Dhabi</span>
+      </div>
 
-    <img src="https://picsum.photos/300/200" alt="A random image">
-
-    <h2>My Hobbies</h2>
-    <ul>
-      <li>Reading</li>
-      <li>Coding</li>
-      <li>Gaming</li>
-    </ul>
+      <a class="btn" href="mailto:you@email.com">Contact Me</a>
+    </div>
 
   </div>
 
