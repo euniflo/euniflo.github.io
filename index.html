@@ -236,7 +236,8 @@ body.dark h2 {
     <h2>Contact Me</h2>
     <input type="text" placeholder="Your Name">
     <input type="email" placeholder="Your Email">
-    <textarea placeholder="Your Message"></textarea>
+   <textarea placeholder="Your Message" id="messageBox" oninput="countChars()"></textarea>
+<p id="charCount" style="text-align:right; font-size:13px; color:#888;">0 / 200 characters</p>
     <button class="submit-btn" onclick="sendMessage()">Send Message</button>
     <p id="successMsg" style="display:none; color:green; margin-top:16px; font-size:15px;">
   ✅ Thank you! Your message has been received.
@@ -267,6 +268,19 @@ body.dark h2 {
   document.getElementById('successMsg').style.display = 'block';
   document.querySelector('.submit-btn').textContent = 'Sent! ✅';
   document.querySelector('.submit-btn').style.backgroundColor = '#27ae60';
+}
+    function countChars() {
+  const message = document.getElementById('messageBox').value;
+  const count = message.length;
+  const display = document.getElementById('charCount');
+
+  display.textContent = count + ' / 200 characters';
+
+  if (count > 200) {
+    display.style.color = 'red';
+  } else {
+    display.style.color = '#888';
+  }
 }
 </script>
 </body>
