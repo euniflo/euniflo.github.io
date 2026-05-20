@@ -265,11 +265,23 @@ body.dark h2 {
     return;
   }
 
-  document.getElementById('successMsg').style.display = 'block';
-  document.querySelector('.submit-btn').textContent = 'Sent! ✅';
-  document.querySelector('.submit-btn').style.backgroundColor = '#27ae60';
+  fetch('https://formspree.io/f/xzdwdnaz', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ name, email, message })
+  })
+  .then(response => {
+    if (response.ok) {
+      document.getElementById('successMsg').style.display = 'block';
+      document.querySelector('.submit-btn').textContent = 'Sent! ✅';
+      document.querySelector('.submit-btn').style.backgroundColor = '#27ae60';
+    } else {
+      alert('Something went wrong. Please try again!');
+    }
+  });
 }
-    function countChars() {
+
+ function countChars() {
   const message = document.getElementById('messageBox').value;
   const count = message.length;
   const display = document.getElementById('charCount');
