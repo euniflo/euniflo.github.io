@@ -174,7 +174,31 @@ rr<!DOCTYPE html>
   }
 
 }
+#darkBtn {
+  background: transparent;
+  color: white;
+  border: 1px solid white;
+  padding: 6px 14px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 14px;
+}
 
+body.dark {
+  background-color: #1a1a2e;
+}
+
+body.dark .container,
+body.dark .form-container {
+  background-color: #16213e;
+  color: white;
+}
+
+body.dark h1,
+body.dark p,
+body.dark h2 {
+  color: #eeeeee;
+}
   </style>
 </head>
 
@@ -183,7 +207,10 @@ rr<!DOCTYPE html>
   <nav>
     <span class="logo">MyWebsite</span>
     <div>
-      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+    </div>
+    <button onclick="toggleDarkMode()" id="darkBtn">🌙 Dark Mode</button>
+  </nav>
       <a href="about.html">About</a>
     </div>
   </nav>
@@ -215,6 +242,17 @@ rr<!DOCTYPE html>
 <footer>
   <p>© 2025 Eunice. Built with HTML & CSS.</p>
 </footer>
+  <script>
+  function toggleDarkMode() {
+    document.body.classList.toggle('dark');
+    const btn = document.getElementById('darkBtn');
+    if (document.body.classList.contains('dark')) {
+      btn.textContent = '☀️ Light Mode';
+    } else {
+      btn.textContent = '🌙 Dark Mode';
+    }
+  }
+</script>
 </body>
 
 </html>
